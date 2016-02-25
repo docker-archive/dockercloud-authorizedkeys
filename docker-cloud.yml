@@ -1,0 +1,8 @@
+authorizedkeys:
+  image: dockercloud/authorizedkeys
+  deployment_strategy: every_node
+  autodestroy: always
+  environment:
+    - "AUTHORIZED_KEYS=ssh-rsa AAAAB3NzaC1yc2EAAA..."
+  volumes:
+    - /root:/user:rw

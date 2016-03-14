@@ -22,6 +22,6 @@ else
 fi
 
 if [ "${HARDEN_SECURITY}" ]; then
-  sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+  sed -i 's/PermitRootLogin yes/PermitRootLogin  without-password/' /etc/ssh/sshd_config
   service ssh restart
 fi

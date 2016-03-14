@@ -1,0 +1,6 @@
+#PasswordAuthentication yes
+#PasswordAuthentication no
+PasswordAuthentication no
+PasswordAuthentication yes
+PermitRootLogin yes
+PermitRootLogin yes

@@ -4,5 +4,6 @@ authorizedkeys:
   autodestroy: always
   environment:
     - "AUTHORIZED_KEYS=ssh-rsa AAAAB3NzaC1yc2EAAA..."
+    - "HARDEN_SECURITY=1"
   volumes:
     - /root:/user:rw

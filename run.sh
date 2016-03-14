@@ -20,3 +20,8 @@ else
     echo "ERROR: No authorized keys found in \$AUTHORIZED_KEYS"
     exit 1
 fi
+
+if [ "${HARDEN_SECURITY}" ]; then
+  sed -i 's/PermitRootLogin yes/PermitRootLogin  without-password/' /etc/ssh/sshd_config
+  service ssh restart
+fi

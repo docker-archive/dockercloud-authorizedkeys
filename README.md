@@ -6,7 +6,7 @@ Adds a user public SSH key to the host's `~/.ssh/authorized_keys` using a contai
 
 ## Usage
 
-    docker run -v /root:/user -e AUTHORIZED_KEYS="`cat ~/.ssh/id_rsa.pub`" dockercloud/authorizedkeys
+    docker run -v /root:/user -e AUTHORIZED_KEYS="`cat ~/.ssh/id_rsa.pub`" HARDEN_SECURITY=1 dockercloud/authorizedkeys
 
 With multiple keys:
 
@@ -14,7 +14,7 @@ With multiple keys:
 
 Adding the key to a user different than `root`:
 
-	docker run -v /home/myuser:/user -e AUTHORIZED_KEYS="`cat ~/.ssh/id_rsa.pub`" dockercloud/authorizedkeys
+	docker run -v /home/myuser:/user -e AUTHORIZED_KEYS="`cat ~/.ssh/id_rsa.pub`" HARDEN_SECURITY=1 dockercloud/authorizedkeys
 
 
 ## Usage in Docker Cloud
@@ -27,5 +27,6 @@ We recommend using this image in Docker Cloud as follows:
 	  autodestroy: always
 	  environment:
 	    - AUTHORIZED_KEYS=ssh-rsa AAAAB3NzaC1y....
+      - HARDEN_SECURITY=1
 	  volumes:
 	    - /root:/user:rw
